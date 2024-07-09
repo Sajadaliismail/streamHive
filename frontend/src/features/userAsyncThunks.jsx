@@ -1,11 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-const port = process.env.REACT_APP_BACKEND_PORT
-
+const port = process.env.CORS
 export const login = createAsyncThunk(
     'auth/login',
     async (userData,{rejectWithValue,dispatch})=>{
         try {
-            const response = await fetch(`http://localhost:${port}/login`,{
+            const response = await fetch(`${port}/login`,{
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -30,7 +29,7 @@ export const userCheck = createAsyncThunk(
     'auth/usercheck',
     async (userData)=>{
         try {
-            const response = await fetch(`http://localhost:${port}/checkuser`,{
+            const response = await fetch(`${port}/checkuser`,{
                 method:'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -49,7 +48,7 @@ export const signup = createAsyncThunk(
     'auth/signup',
     async (userData,{rejectWithValue})=>{
         try {
-         const response = await fetch(`http://localhost:${port}/signup`,{
+         const response = await fetch(`${port}/signup`,{
             method:'POST',
             headers: {
                 'Content-Type':'application/json'
@@ -72,7 +71,7 @@ export const logout = createAsyncThunk(
     'auth/logout',
     async ()=>{
         try {
-            const response =await fetch(`http://localhost:${port}/logout`,{
+            const response =await fetch(`${port}/logout`,{
                 method:'POST'
             })
             const data = await response.json()
