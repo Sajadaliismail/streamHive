@@ -1,9 +1,0 @@
-.custom-tv-player,
-.custom-tv-player .tv-player {
-  background-color: white !important;
-  overflow: visible !important;
-}
-
-  .custom-tv-player .tv-player-ui__cover {
-    background: none !important; /* Override the background gradient */
-  }
