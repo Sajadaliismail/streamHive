@@ -4,6 +4,7 @@ export const login = createAsyncThunk(
     'auth/login',
     async (userData,{rejectWithValue,dispatch})=>{
         console.log(port);
+        console.log(process.env);
         try {
             const response = await fetch(`${port}/login`,{
                 method:'POST',
