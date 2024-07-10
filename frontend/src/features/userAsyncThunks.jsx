@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-const port = process.env.CORS
+const port = process.env.REACT_APP_CORS;
 export const login = createAsyncThunk(
     'auth/login',
     async (userData,{rejectWithValue,dispatch})=>{
+        console.log(port);
         try {
-            console.log(port);
             const response = await fetch(`${port}/login`,{
                 method:'POST',
                 headers: {
