@@ -14,6 +14,8 @@ const Canvas = () => {
         });
     });
 
+    const particlesLoaded = (container) => {
+    };
 
     return (
         <>
