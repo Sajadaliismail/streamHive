@@ -17,9 +17,13 @@ function Header() {
     const dispatch = useDispatch();
     const { search, setSearch } = useContext(SearchInputContext);  
     function handleInput(e) {
-      e.preventDefault()
       const searchTerm = e.target.value;
-      setSearch(searchTerm);
+    
+      if (e.key === 'Enter') {
+        handleSubmit();
+      } else {
+        setSearch(searchTerm);
+      }
     }
   
     function handleSubmit(e) {
