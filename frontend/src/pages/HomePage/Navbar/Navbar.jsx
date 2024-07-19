@@ -68,8 +68,14 @@ function Header() {
                 placeholder="Search movies..."
                 aria-label="Search"
                 type="Search"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault(); // Prevent the default Enter key behavior
+                    handleSubmit(e); // Call handleSubmit manually
+                  }
+                }}
               />
-              <MDBBtn type="button" onClick={handleSubmit}>
+              <MDBBtn type="submit" onClick={handleSubmit}>
                 Search
               </MDBBtn>
             </MDBInputGroup>

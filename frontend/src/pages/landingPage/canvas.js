@@ -12,7 +12,7 @@ const Canvas = () => {
         }).then(() => {
             setInit(true);
         });
-    });
+    },[]);
 
     const particlesLoaded = (container) => {
     };
